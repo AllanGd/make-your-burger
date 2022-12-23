@@ -77,28 +77,5 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": [
-    {
-      "nome": "Allan",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
-      "nome": "Ana Paula",
-      "carne": "Picanha",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Tomate",
-        "Pepino",
-        "Cheddar"
-      ],
-      "status": "Solicitado",
-      "id": 2
-    }
-  ]
+  "burgers": []
 }
