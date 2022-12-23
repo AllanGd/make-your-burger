@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Componente de mensagem</p>
+    <message :msg="msg" v-show="msg"></message>
     <div>
         <form id="burger-form" @submit="createBurger">
             <div class="input-container">
@@ -10,14 +10,14 @@
             <div class="input-container">
                 <label for="pao">Escolha o pão: </label>
                 <select name="pao" id="pao" v-model="pao">
-                    <option value="">Selecione o seu pão</option>
+                    <option value="">Selecione o pão</option>
                     <option v-for="pao in paes" :key="pao.id" :value="pao.tipo"> {{ pao.tipo }} </option>
                 </select>
             </div>
             <div class="input-container">
                 <label for="carne">Escolha a carne do seu burger: </label>
                 <select name="carne" id="carne" v-model="carne">
-                    <option value="">Selecione o tipo de carne</option>
+                    <option value="">Selecione a carne</option>
                     <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo"> {{ carne.tipo }} </option>
                 </select>
             </div>
@@ -40,7 +40,9 @@
 </template>
 
 <script>
+import Message from './Message.vue';
 export default {
+  components: { Message },
     name: 'BurgerForm',
     data() {
         return {
@@ -83,6 +85,10 @@ export default {
             });
 
             const res = await req.json();
+
+            this.msg = `Pedido Nº ${res.id} realizado com sucesso.`
+
+            setTimeout(()=> this.msg = "", 3000)
 
             console.log(res)
 
